@@ -13,6 +13,8 @@
 		0C92A5001D191DBC00798712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92A4FE1D191DBC00798712 /* Main.storyboard */; };
 		0C92A5021D191DBC00798712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C92A5011D191DBC00798712 /* Assets.xcassets */; };
 		0C92A5051D191DBC00798712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92A5031D191DBC00798712 /* LaunchScreen.storyboard */; };
+		0C92A5101D19223400798712 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C92A50F1D19223400798712 /* Security.framework */; };
+		0C9ACD6C1D1A327D00D9F0FE /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9ACD6B1D1A327D00D9F0FE /* KeychainWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		0C92A5011D191DBC00798712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C92A5041D191DBC00798712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C92A5061D191DBC00798712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C92A50F1D19223400798712 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0C9ACD6A1D1A327D00D9F0FE /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		0C9ACD6B1D1A327D00D9F0FE /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C92A5101D19223400798712 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 		0C92A4E91D191DBC00798712 = {
 			isa = PBXGroup;
 			children = (
+				0C92A50F1D19223400798712 /* Security.framework */,
 				0C92A4F41D191DBC00798712 /* KeychainDemo */,
 				0C92A4F31D191DBC00798712 /* Products */,
 			);
@@ -67,6 +74,8 @@
 				0C92A5031D191DBC00798712 /* LaunchScreen.storyboard */,
 				0C92A5061D191DBC00798712 /* Info.plist */,
 				0C92A4F51D191DBC00798712 /* Supporting Files */,
+				0C9ACD6A1D1A327D00D9F0FE /* KeychainWrapper.h */,
+				0C9ACD6B1D1A327D00D9F0FE /* KeychainWrapper.m */,
 			);
 			path = KeychainDemo;
 			sourceTree = "<group>";
@@ -110,6 +119,7 @@
 				TargetAttributes = {
 					0C92A4F11D191DBC00798712 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 67K8U6QEBK;
 					};
 				};
 			};
@@ -152,6 +162,7 @@
 				0C92A4FD1D191DBC00798712 /* ViewController.m in Sources */,
 				0C92A4FA1D191DBC00798712 /* AppDelegate.m in Sources */,
 				0C92A4F71D191DBC00798712 /* main.m in Sources */,
+				0C9ACD6C1D1A327D00D9F0FE /* KeychainWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +274,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KeychainDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.buyforyou.KeychainDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -274,10 +290,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KeychainDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.buyforyou.KeychainDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -300,6 +321,7 @@
 				0C92A50B1D191DBC00798712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
